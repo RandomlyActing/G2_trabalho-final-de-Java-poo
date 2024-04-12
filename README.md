@@ -4,4 +4,3 @@ Participantes:
 * Gabriel Martins Vasconcellos
 * Guido Giuseppe Scagliusi
 * Mateus Pereira Daltro
-* Ian Gonçalves Paes Siqueira

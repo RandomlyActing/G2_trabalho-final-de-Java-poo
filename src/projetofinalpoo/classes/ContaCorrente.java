@@ -1,32 +1,40 @@
 package projetofinalpoo.classes;
 
-import projetofinalpoo.enums.TipoContaEnum;
+import projetofinalpoo.enums.ValorMovimentacoes;
 
 public class ContaCorrente extends Conta {
-	
-	private TipoContaEnum tipo = TipoContaEnum.CORRENTE;
-	
-	public ContaCorrente(String cpfTitular, String agencia) {
-		super(cpfTitular, agencia);
+
+	public ContaCorrente(Cliente cliente, String agencia, Gerente gerente) {
+		super(cliente, agencia, gerente);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void saque(double valor) {
-		// TODO Auto-generated method stub
+		saldo = saldo - (valor + ValorMovimentacoes.SAQUE.getValorPorMovimentacao());
 
 	}
 
 	@Override
 	public void deposito(double valor) {
-		// TODO Auto-generated method stub
+		saldo =  (saldo + valor) - ValorMovimentacoes.DEPOSITO.getValorPorMovimentacao();
 
 	}
 
 	@Override
 	public void transferencia(Conta destino, double valor) {
-		// TODO Auto-generated method stub
+		subtrairSaldo(valor + ValorMovimentacoes.TRANSFERENCIA.getValorPorMovimentacao());
+		destino.adicionarSaldo(valor);
 
 	}
 
+	public void adicionarSaldo (double valor)
+	{
+		this.saldo = this.saldo + valor; 
+	}
+	
+	public void subtrairSaldo (double valor)
+	{
+		this.saldo = this.saldo - valor; 
+	}
 }

@@ -1,16 +1,19 @@
 package projetofinalpoo.classes;
 
-import projetofinalpoo.enums.CargoEnum;
-
 public abstract class Funcionario extends Pessoa {
-	
-	protected CargoEnum cargo;
 
+	private String cargo;
 	public Funcionario(String cpf, String senha) {
 		super(cpf, senha);
 		
 	}
+	public String getCargo() {
+		return cargo;
+	}
+	
+	public void setCargo(String cargo) {
+		this.cargo = cargo;
+	}
 
 	
-
 }

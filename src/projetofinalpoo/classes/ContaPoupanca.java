@@ -1,32 +1,47 @@
 package projetofinalpoo.classes;
 
-import projetofinalpoo.enums.TipoContaEnum;
+import projetofinalpoo.enums.ValorMovimentacoes;
 
 public class ContaPoupanca extends Conta {
-	
-	private TipoContaEnum tipo = TipoContaEnum.POUPANCA;
 
-	public ContaPoupanca(String cpfTitular, String agencia) {
-		super(cpfTitular, agencia);
+	public ContaPoupanca(Cliente cliente, String agencia, Gerente gerente) {
+		super(cliente, agencia, gerente);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
+	public void adicionarSaldo (double valor)
+	{
+		this.saldo = this.saldo + valor; 
+	}
+
+	@Override
+	public void subtrairSaldo (double valor)
+	{
+		this.saldo = this.saldo - valor; 
+	}
+
+	@Override
 	public void saque(double valor) {
-		// TODO Auto-generated method stub
-		
+		saldo = saldo - (valor + ValorMovimentacoes.SAQUE.getValorPorMovimentacao());
+
 	}
 
 	@Override
 	public void deposito(double valor) {
-		// TODO Auto-generated method stub
-		
+		saldo =  (saldo + valor) - ValorMovimentacoes.DEPOSITO.getValorPorMovimentacao();
 	}
 
 	@Override
 	public void transferencia(Conta destino, double valor) {
-		// TODO Auto-generated method stub
-		
+		subtrairSaldo(valor + ValorMovimentacoes.TRANSFERENCIA.getValorPorMovimentacao());
+		destino.adicionarSaldo(valor);
+
+	}
+	
+	public void rendimentoPoupanca (double valor , int dias)
+	{
+		System.out.println("O rendimento de R$" + valor + " em " + dias + " dias será R$" + (valor + (valor * (dias * 0.001))));
 	}
 
 }
