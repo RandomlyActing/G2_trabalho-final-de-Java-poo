@@ -1,9 +1,11 @@
 package projetofinalpoo.classes;
 
+import projetofinalpoo.exceptions.ContaException;
+
 public abstract class Conta {
 
 	protected Cliente cliente;
-	protected double saldo = 0.0;
+	protected double saldo = 0.00;
 	protected String agencia;
 	protected Gerente gerente;
 	
@@ -48,8 +50,8 @@ public abstract class Conta {
 	public abstract void mostrarSaldo();
 	public abstract void adicionarSaldo (double valor);
 	public abstract void subtrairSaldo (double valor);
-	public abstract void saque(double valor);
-    public abstract void deposito(double valor);
-    public abstract void transferencia(Conta destino, double valor);
+	public abstract void saque(double valor) throws ContaException;
+    public abstract void deposito(double valor) throws ContaException;
+    public abstract void transferencia(Conta destino, double valor) throws ContaException;
 	
 }

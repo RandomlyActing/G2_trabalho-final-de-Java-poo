@@ -3,8 +3,8 @@ package projetofinalpoo.classes;
 public abstract class Funcionario extends Pessoa {
 
 	private String cargo;
-	public Funcionario(String cpf, String senha) {
-		super(cpf, senha);
+	public Funcionario(String nome, String cpf, String senha) {
+		super(nome,cpf, senha);
 		
 	}
 	public String getCargo() {
