@@ -11,7 +11,7 @@ public class TesteContaCorrente {
 	ContaPoupanca c2 = new ContaPoupanca(cli2, "2885", ger);
 	
 	c1.setSaldo(1000);
-	c2.setSaldo(1000);
+	c2.setSaldo(-1000);
 	
 	System.out.println("saldo da conta C1:" + c1.getSaldo());
 	System.out.println("saldo da conta C2:" + c2.getSaldo());
