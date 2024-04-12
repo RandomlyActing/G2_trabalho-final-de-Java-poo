@@ -24,7 +24,34 @@ public class TesteContaCorrente {
 	c2.rendimentoPoupanca(1000.0, 40);
 	c1.mostrarSaldo();
 	}
-	
+	public class Teste {
+	    public static void main(String[] args) {
+	    	Cliente cliente = new Cliente("João", "12345678900");
+	        Gerente gerente = new Gerente("Maria", "98765432100");
+	        String agencia = "001";
+
+
+	        ContaCorrente contaCorrente = new ContaCorrente(cliente, agencia, gerente);
+
+
+	        testarValoresNegativos(contaCorrente);
+	    }
+
+	    public static void testarValoresNegativos(ContaCorrente contaCorrente) {
+	 
+	        double valorSaqueNegativo = -100;
+	        contaCorrente.saque(valorSaqueNegativo); 
+
+	    
+	        double valorDepositoNegativo = -50;
+	        contaCorrente.deposito(valorDepositoNegativo); 
+	        
+	        double valorTransferenciaNegativo = -200;
+	        
+	        ContaCorrente outraContaCorrente = new ContaCorrente(new Cliente("Ana", "98765432101"), "002", contaCorrente.getGerente());
+	        contaCorrente.transferencia(outraContaCorrente, valorTransferenciaNegativo);
+	    }
+	}
+}
 	
 
-}
