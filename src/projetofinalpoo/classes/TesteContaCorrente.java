@@ -21,7 +21,7 @@ public class TesteContaCorrente {
 	System.out.println("saldo da conta C1:" + c1.getSaldo());
 	System.out.println("saldo da conta C2:" + c2.getSaldo());
 	
-	c2.rendimentoPoupanca(1000.0, 30);
+	c2.rendimentoPoupanca(1000.0, 40);
 	c1.mostrarSaldo();
 	}
 	
