@@ -37,4 +37,12 @@ public class ContaCorrente extends Conta {
 	{
 		this.saldo = this.saldo - valor; 
 	}
+
+	@Override
+	public void mostrarSaldo() {
+		System.out.println("O saldo da sua conta é R$" + this.getSaldo());
+		
+	}
+	
+	
 }

@@ -45,6 +45,7 @@ public abstract class Conta {
 		this.saldo = saldo;
 	}
 	
+	public abstract void mostrarSaldo();
 	public abstract void adicionarSaldo (double valor);
 	public abstract void subtrairSaldo (double valor);
 	public abstract void saque(double valor);

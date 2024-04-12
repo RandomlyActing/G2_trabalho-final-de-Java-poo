@@ -44,4 +44,9 @@ public class ContaPoupanca extends Conta {
 		System.out.println("O rendimento de R$" + valor + " em " + dias + " dias será R$" + (valor + (valor * (dias * 0.001))));
 	}
 
+	@Override
+	public void mostrarSaldo() {
+		System.out.println("O saldo da sua conta é R$" + this.getSaldo());
+		
+	}
 }
