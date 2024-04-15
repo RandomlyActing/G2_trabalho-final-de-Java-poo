@@ -5,13 +5,13 @@ import projetofinalpoo.exceptions.ContaException;
 import projetofinapoo.entradasaida.EscreverTransacao;
 
 
-public class ContaPoupanca extends Conta {
+public final class ContaPoupanca extends Conta {
 	
 	private EscreverTransacao impressor = new EscreverTransacao();
 	
 	public ContaPoupanca(Cliente cliente, String agencia, Gerente gerente) {
 		super(cliente, agencia, gerente);
-		// TODO Auto-generated constructor stub
+		super.tipo = "Poupança";
 	}
 
 	@Override

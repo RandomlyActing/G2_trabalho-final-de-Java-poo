@@ -4,13 +4,13 @@ import projetofinalpoo.enums.ValorMovimentacoes;
 import projetofinalpoo.exceptions.ContaException;
 import projetofinapoo.entradasaida.EscreverTransacao;
 
-public class ContaCorrente extends Conta {
+public final class ContaCorrente extends Conta {
 	
 	private EscreverTransacao impressor = new EscreverTransacao();
 
 	public ContaCorrente(Cliente cliente, String agencia, Gerente gerente) {
 		super(cliente, agencia, gerente);
-		// TODO Auto-generated constructor stub
+		super.tipo = "Corrente";
 	}
 
 	@Override

@@ -8,6 +8,7 @@ public abstract class Conta {
 	protected double saldo = 0.00;
 	protected String agencia;
 	protected Gerente gerente;
+	protected String tipo;
 	
 	
 	public Conta(Cliente cliente, String agencia, Gerente gerente) {
@@ -53,5 +54,10 @@ public abstract class Conta {
 	public abstract void saque(double valor) throws ContaException;
     public abstract void deposito(double valor) throws ContaException;
     public abstract void transferencia(Conta destino, double valor) throws ContaException;
+
+
+	public String getTipo() {
+		return tipo;
+	}
 	
 }

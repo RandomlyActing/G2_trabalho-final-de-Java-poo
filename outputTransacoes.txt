@@ -1,0 +1,4 @@
+
+Em 2024-04-12T22:32:24.011010700, Fernando fez um saque de R$300.0
+Em 2024-04-12T22:32:24.019013800, Vicente fez uma transferencia de R$150.0 para Fernando(22222222) da agência2885
+Em 2024-04-12T22:32:24.025014400, Vicente fez um deposito de R$600.0
