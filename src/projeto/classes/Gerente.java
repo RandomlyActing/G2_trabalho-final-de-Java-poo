@@ -11,6 +11,10 @@ public class Gerente extends Funcionario {
 		this.cargo = CargosEnum.GERENTE.name();
 		this.agencia = agencia;
 	}
+
+	public String getAgencia() {
+		return agencia;
+	}
 	
 	
 
