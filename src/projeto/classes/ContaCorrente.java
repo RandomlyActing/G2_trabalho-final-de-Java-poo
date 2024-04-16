@@ -1,11 +1,14 @@
 package projeto.classes;
 
+import projeto.entradasaida.EscreverTransacao;
 import projeto.enums.TipoContaEnum;
 import projeto.enums.ValorMovimentacoes;
 import projeto.exceptions.ContaException;
 
 public class ContaCorrente extends Conta {
 
+	private EscreverTransacao impressor = new EscreverTransacao();
+	
 	public ContaCorrente(Cliente cliente, String agencia, Gerente gerente) {
 		super(cliente, agencia, gerente);
 		this.tipo = TipoContaEnum.CORRENTE.name();
@@ -21,7 +24,7 @@ public class ContaCorrente extends Conta {
 		else
 		{
 		saldo = saldo - (valor + ValorMovimentacoes.SAQUE.getValorPorMovimentacao());
-		//impressor.escrevaSaque(valor, cliente.getNome());
+		impressor.escrevaSaque(valor, cliente.getNome());
 		}
 		
 	}
@@ -36,7 +39,7 @@ public class ContaCorrente extends Conta {
 		else
 		{
 		saldo =  (saldo + valor) - ValorMovimentacoes.DEPOSITO.getValorPorMovimentacao();
-		//impressor.escrevaDeposito(valor, cliente.getNome());
+		impressor.escrevaDeposito(valor, cliente.getNome());
 		}
 		
 	}
@@ -51,7 +54,7 @@ public class ContaCorrente extends Conta {
 		{
 		subtrairSaldo(valor + ValorMovimentacoes.TRANSFERENCIA.getValorPorMovimentacao());
 		destino.adicionarSaldo(valor);
-		//impressor.escrevaTransFerencia(destino, valor, cliente.getNome());
+		impressor.escrevaTransFerencia(destino, valor, cliente.getNome());
 		}
 		
 	}

@@ -1,5 +1,9 @@
 package projeto.classes;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+
+import projeto.entradasaida.EscreverRelatorioTotaldeCapital;
 import projeto.enums.CargosEnum;
 
 public class Presidente extends Funcionario {
@@ -9,5 +13,32 @@ public class Presidente extends Funcionario {
 		this.cargo = CargosEnum.PRESIDENTE.name();
 		
 	}
+	
+	public void totaldeCapital (ArrayList<Conta> escopo)
+	{
+		LocalDate data = LocalDate.now();
+		double acumulador = 0.0;
+		
+		for(Conta c : escopo)
+		{
+			acumulador = acumulador + c.getSaldo();
+		}
+		
+		System.out.println("------------------ Relatório de Total de Capital--------------------------");
+		System.out.println("------------------ Data: " + data + " -------------------------------------");
+		
+		for(Conta c : escopo)
+		{
+			System.out.println("Nome: " +c.getCliente().getNome() + " ----- Tipo de Conta: " + c.getTipo() + " ----- Saldo: R$" + c.getSaldo());			
+		}
+		
+		System.out.println("------------------ Total de Capital Acumulado--------------- R$" + acumulador);
+		
+		EscreverRelatorioTotaldeCapital.relatorio(escopo);
+		
+		
+			
+	}
+	
 
 }
