@@ -1,5 +1,6 @@
 package projeto.classes;
 
+import projeto.entradasaida.EscreverRelatorioRendimentoPoupanca;
 import projeto.entradasaida.EscreverTransacao;
 import projeto.enums.TipoContaEnum;
 import projeto.enums.ValorMovimentacoes;
@@ -62,6 +63,7 @@ public class ContaPoupanca extends Conta {
 	public void rendimentoPoupanca (double valor, int dias)
 	{
 		System.out.println("O rendimento de R$" + valor + " em " + dias + " dias será R$" + (valor + (valor * (dias * 0.001))));
+		EscreverRelatorioRendimentoPoupanca.relatorio(valor, dias, cliente.getNome());
 	}
 	
 	public void adicionarSaldo (double valor)
@@ -74,6 +76,7 @@ public class ContaPoupanca extends Conta {
 		this.saldo = this.saldo - valor; 
 	}
 	
+	@Override
 	public void mostrarSaldo() {
 		System.out.println("O saldo da sua conta é R$" + this.getSaldo());
 		

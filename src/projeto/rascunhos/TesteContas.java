@@ -2,6 +2,7 @@ package projeto.rascunhos;
 
 import projeto.classes.Cliente;
 import projeto.classes.ContaCorrente;
+import projeto.classes.ContaPoupanca;
 import projeto.classes.Gerente;
 import projeto.exceptions.ContaException;
 
@@ -15,7 +16,7 @@ public class TesteContas {
 		Gerente ger = new Gerente("Mariano","333333333-33", "123456", "2885");
 		
 		ContaCorrente c1 = new ContaCorrente(cli2, "2885", ger);
-		ContaCorrente c2 = new ContaCorrente(cli1, "2885", ger);
+		ContaPoupanca c2 = new ContaPoupanca(cli1, "2885", ger);
 		
 		
 		c1.adicionarSaldo(1000);
@@ -28,6 +29,8 @@ public class TesteContas {
 			c1.saque(100);
 			c1.deposito(200);
 			c2.transferencia(c1, 400);
+			
+			c2.rendimentoPoupanca(300, 60);
 			
 			c1.mostrarSaldo();
 			c2.mostrarSaldo();
