@@ -28,12 +28,17 @@ public class TesteContas {
 		try {
 			c1.saque(100);
 			c1.deposito(200);
+			c1.saque(200);
+			c1.deposito(10000);
+			c1.transferencia(c2, 100);
 			c2.transferencia(c1, 400);
 			
 			c2.rendimentoPoupanca(300, 60);
 			
 			c1.mostrarSaldo();
 			c2.mostrarSaldo();
+			c1.mostrarTotalTributacaov2();
+			c1.mostrarTotalTributacao();
 		} catch (ContaException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -4,12 +4,14 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import projeto.classes.Conta;
 
 public class EscreverRelatorioNumerodeContas {
 	
+	private static DateTimeFormatter formatoDiaHora = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	public static void relatorio (ArrayList<Conta> escopo, String agencia, String nome)
 	{
 		int contador = 0;
@@ -20,7 +22,7 @@ public class EscreverRelatorioNumerodeContas {
 			BufferedWriter bw = new BufferedWriter(new FileWriter("Relatório de Número de Contas do Gerente " + nome + " - "+ data + ".txt"));
 			
 			bw.write("------------------ Relação de Contas--------------------------");
-			bw.write("\nGerente ------- " + nome + " -----------Data: " + data);
+			bw.write("\nGerente ------- " + nome + " -----------Data: " + data.format(formatoDiaHora));
 	
 			for(Conta c: escopo)
 			{

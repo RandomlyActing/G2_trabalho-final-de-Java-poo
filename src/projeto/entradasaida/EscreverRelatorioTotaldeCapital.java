@@ -4,12 +4,14 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import projeto.classes.Conta;
 
 public class EscreverRelatorioTotaldeCapital {
 	
+	private static DateTimeFormatter formatoDiaHora = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	public static void relatorio (ArrayList<Conta> listaContas)
 	{
 		LocalDate data = LocalDate.now();
@@ -23,7 +25,7 @@ public class EscreverRelatorioTotaldeCapital {
 			}
 			
 			bw.write("------------------ Relatório de Total de Capital--------------------------");
-			bw.write("\n------------------ Data: " + data + " -------------------------------------");
+			bw.write("\n------------------ Data: " + data.format(formatoDiaHora) + " -------------------------------------");
 			
 			for(Conta c : listaContas)
 			{

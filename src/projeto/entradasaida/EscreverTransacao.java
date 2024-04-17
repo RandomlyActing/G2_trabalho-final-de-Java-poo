@@ -1,12 +1,18 @@
 package projeto.entradasaida;
 
 import projeto.classes.Conta;
+import projeto.enums.ValorMovimentacoes;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class EscreverTransacao {
+	
+	//formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")
+	private DateTimeFormatter formatoDiaHora = DateTimeFormatter.ofPattern("dd/MM/yyyy - HH:mm:ss");
 	
 	public EscreverTransacao() {
 	}
@@ -14,8 +20,9 @@ public class EscreverTransacao {
 	{
 		LocalDateTime dataTransacao = LocalDateTime.now();
 		try {
-			BufferedWriter bw = new BufferedWriter(new FileWriter("outputTransacoes.txt", true));
-			bw.append("\nEm " + dataTransacao +", " + nome + " fez um saque de R$" + valor );
+			BufferedWriter bw = new BufferedWriter(new FileWriter("BACKLOGTransacoes.txt", true));
+			bw.append("\n" + dataTransacao.format(formatoDiaHora) +" ---- " + nome + " ---- Transação: "
+			+ ValorMovimentacoes.SAQUE.name() +" ----  R$" + valor );
 			bw.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -27,8 +34,9 @@ public class EscreverTransacao {
 	{
 		LocalDateTime dataTransacao = LocalDateTime.now();
 		try {
-			BufferedWriter bw = new BufferedWriter(new FileWriter("outputTransacoes.txt", true));
-			bw.append("\nEm " + dataTransacao + ", " + nome + " fez um deposito de R$" + valor );
+			BufferedWriter bw = new BufferedWriter(new FileWriter("BACKLOGTransacoes.txt", true));
+			bw.append("\n" + dataTransacao.format(formatoDiaHora) +" ---- " + nome + " ---- Transação: "
+					+ ValorMovimentacoes.DEPOSITO.name() +" ----  R$" + valor );
 			bw.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -40,10 +48,10 @@ public class EscreverTransacao {
 	{
 		LocalDateTime dataTransacao = LocalDateTime.now();
 		try {
-			BufferedWriter bw = new BufferedWriter(new FileWriter("outputTransacoes.txt", true));
-			bw.append("\nEm " + dataTransacao + ", "+ nome + " fez uma transferencia de R$" + valor +
-			" para " + destino.getCliente().getNome() +"(" +destino.getCliente().getCpf() + ")" +
-			" da agência" + destino.getAgencia() );
+			BufferedWriter bw = new BufferedWriter(new FileWriter("BACKLOGTransacoes.txt", true));
+			bw.append("\n" + dataTransacao.format(formatoDiaHora) +" ---- " + nome + " ---- Transação: "
+					+ ValorMovimentacoes.TRANSFERENCIA.name() + " Para: "+ destino.getCliente().getNome()
+					+ " (" + destino.getCliente().getCpf() + ") ----  R$" + valor );
 			bw.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
