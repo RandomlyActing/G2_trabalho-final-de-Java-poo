@@ -40,4 +40,10 @@ public class Gerente extends Funcionario {
 		
 	}
 
+	public void setAgencia(String agencia) {
+		this.agencia = agencia;
+	}
+	
+	
+
 }

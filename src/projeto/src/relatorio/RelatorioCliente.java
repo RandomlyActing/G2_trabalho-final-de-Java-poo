@@ -1,4 +1,4 @@
-package relatorio;
+package projeto.src.relatorio;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,23 +13,23 @@ import java.util.List;
 	        this.clientes = new ArrayList<>();
 	    }
 
-	    // Método para adicionar um cliente ao relatório
+	    // Mï¿½todo para adicionar um cliente ao relatï¿½rio
 	    public void adicionarCliente(Cliente cliente) {
 	        clientes.add(cliente);
 	    }
 
-	    // Método para gerar o relatório em ordem alfabética
+	    // Mï¿½todo para gerar o relatï¿½rio em ordem alfabï¿½tica
 	    public void gerarRelatorio() {
 	        // Ordena os clientes pelo nome
 	        Collections.sort(clientes, Comparator.comparing(Cliente::getNome));
 
-	        // Imprime o relatório
-	        System.out.println("Relatório de Clientes:");
+	        // Imprime o relatï¿½rio
+	        System.out.println("Relatï¿½rio de Clientes:");
 	        System.out.println("----------------------");
 	        for (Cliente cliente : clientes) {
 	            System.out.println("Nome: " + cliente.getNome());
 	            System.out.println("CPF: " + cliente.getCpf());
-	            System.out.println("Agência: " + cliente.getAgencia());
+	            System.out.println("Agï¿½ncia: " + cliente.getAgencia());
 	            System.out.println();
 	        }
 	    }

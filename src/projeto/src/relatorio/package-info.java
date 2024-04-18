@@ -1,2 +1,2 @@
-package relatorio;
+package projeto.src.relatorio;
 
