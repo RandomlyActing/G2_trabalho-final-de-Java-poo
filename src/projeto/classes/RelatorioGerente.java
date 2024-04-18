@@ -1,4 +1,4 @@
-package projeto.classes;
+/*package projeto.classes;
 
 import java.util.ArrayList;
 
@@ -32,5 +32,5 @@ public class RelatorioGerente {
 		
 		
 	}
-}
+}*/
 	

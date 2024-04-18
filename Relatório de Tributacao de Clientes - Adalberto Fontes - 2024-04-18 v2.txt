@@ -1,0 +1,15 @@
+--------------------RELATÓRIO DE GASTOS COM TRIBUTAÇÃO DE CONTAS-------------
+NOME: Adalberto Fontes ------------ CPF:111111111-11 ------------- DATA: 18/04/2024
+Data: 18/04/2024 - 14:54:54 ------- Tipo:DEPOSITO ------ Valor: R$0,10
+Data: 18/04/2024 - 14:54:58 ------- Tipo:SAQUE ------ Valor: R$0,10
+Data: 18/04/2024 - 14:55:12 ------- Tipo:TRANSFERENCIA ------ Valor: R$0,20
+O TOTAL DE GASTOS COM TRIBUTAÇÕES DE SUA CONTA: R$0,40
+----------------------------------------------------------------------------
+
+----------------------------------------------------------------------------
+---------------------EXPLICATIVO DAS TRANSAÇÕES-----------------------------
+----------------------------------------------------------------------------
+
+Todo saque na sua conta corrente custará R$0,10
+Todo depósito na sua conta corrente custará R$0,10
+Toda Transferência na sua conta corrente custará R$0,20

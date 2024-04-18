@@ -1,19 +1,24 @@
 package cont;
 
 import java.io.FileNotFoundException;
+import java.util.List;
 import java.util.Scanner;
-import projeto.classes.ContaCorrente;
+
+import projeto.classes.Conta;
+import projeto.classes.ContaPoupanca;
+import projeto.exceptions.ContaException;
 
 public final class MenuClientePou{
 
-	public final void menuClientePou(Scanner in, ContaCorrente cliente) throws FileNotFoundException{
+	public final void menuClientePou(Scanner in, ContaPoupanca cliente) throws FileNotFoundException, ContaException{
 		
+		List<ContaPoupanca> contaPou = Ler.contaPou;
 		int menu = 0;
 		int submenu = 0;
 		int sair = 0;
 			
 		do {
-		
+			
 			System.out.println("*** MENU *** \n");
 			System.out.println("1 - Movimentações na Conta");
 			System.out.println("2 - Relatórios");
@@ -36,7 +41,18 @@ public final class MenuClientePou{
 							switch (submenu) 
 							{
 								case 1:
-									System.out.println("Saque");
+									System.out.println("Saque \n");
+									
+									cliente.mostrarSaldo();
+									System.out.println("\n*** Quanto gostaria de sacar? ***");
+									double saq = in.nextDouble();
+									
+									cliente.saque(saq);
+									cliente.mostrarSaldo();
+									
+									if (cliente.getSaldo() < 0) {
+										System.out.println("*** Aviso Sua Conta Esta No Negativo!!! ***");
+									}
 									
 									do {
 									System.out.println("\n*** Gostaria de sair ou fazer outra operação *** \n");
@@ -50,7 +66,15 @@ public final class MenuClientePou{
 									break;
 									
 								case 2:
-									System.out.println("Depósito.");
+									System.out.println("Depósito.\n");
+									
+									cliente.mostrarSaldo();
+									System.out.println("\n*** Quanto gostaria de depósitar? ***\n");
+									double dep = in.nextDouble();
+									
+									
+									cliente.deposito(dep);
+									cliente.mostrarSaldo();
 									
 									do {
 										System.out.println("\n*** Gostaria de sair ou fazer outra operação *** \n");
@@ -64,7 +88,26 @@ public final class MenuClientePou{
 										break;
 									
 								case 3:
-									System.out.println("Transferência para outra conta");
+									System.out.println("\n***Transferência para outra conta***\n");
+									
+									System.out.println("\n*** Quanto gostaria de Transferir para outra conta? ***\n");
+									double trans = in.nextDouble();
+									
+									System.out.println("\n*** Para quem deseja transferir? ***\n");
+									String cli = in.next();
+									
+									
+									Conta transf = null;
+									for (Conta c : contaPou) {
+										if (c.getCliente().getCpf().equals(cli)) {
+											transf = c;
+											break;
+										}
+									}
+									transf.getCliente().setCpf(cli);
+										
+									cliente.transferencia(transf , trans);
+									cliente.mostrarSaldo();
 									
 									do {
 										System.out.println("\n*** Gostaria de sair ou fazer outra operação *** \n");
@@ -95,7 +138,9 @@ public final class MenuClientePou{
 					
 						switch (submenu) {
 							case 1:
-								System.out.println("*** Saldo ***");
+								
+								System.out.println("\n*** Saldo ***\n");
+								cliente.mostrarSaldo();
 								
 								do {
 									System.out.println("\n*** Gostaria de sair ou fazer outra operação *** \n");
@@ -109,7 +154,10 @@ public final class MenuClientePou{
 									break;
 									
 							case 2:
-								System.out.println("*** Relatório de tributação da conta corrente ***");
+								
+								System.out.println("\n*** Relatório de tributação da conta Poupança ***\n");
+								cliente.mostrarTotalTributacaov2();
+								
 								do {
 									
 									System.out.println("\n*** Gostaria de sair ou fazer outra operação *** \n");
@@ -122,7 +170,16 @@ public final class MenuClientePou{
 									}while (sair != 1);
 									break;
 							case 3:
-								System.out.println("*** Relatório de Rendimento da poupança ***");
+								
+								System.out.println("\n*** Relatório de Rendimento da poupança ***\n");
+								
+								System.out.println("Quantidade de dinheiro que ira ser depositado: ");
+								double din = in.nextDouble();
+								
+								System.out.println("Por quantos dias que ira deixar o dinheiro rendendo? ");
+								int dia = in.nextInt();
+								
+								cliente.rendimentoPoupanca(din, dia);
 								
 								do {
 									System.out.println("\n*** Gostaria de sair ou fazer outra operação *** \n");

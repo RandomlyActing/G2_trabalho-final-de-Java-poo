@@ -1,0 +1,18 @@
+------------------ Relatório de Total de Capital--------------------------
+------------------ Data: 18/04/2024 -------------------------------------
+Nome: Adalberto Fontes ----- Tipo de Conta: CORRENTE ----- Saldo: R$0.0
+Nome: Joana Marinho ----- Tipo de Conta: CORRENTE ----- Saldo: R$0.0
+Nome: Mauricio Montes ----- Tipo de Conta: CORRENTE ----- Saldo: R$0.0
+Nome: Valentina Camanho ----- Tipo de Conta: CORRENTE ----- Saldo: R$0.0
+Nome: Morgana Caixão ----- Tipo de Conta: CORRENTE ----- Saldo: R$0.0
+Nome: Adalberto Fontes ----- Tipo de Conta: POUPANCA ----- Saldo: R$0.0
+Nome: Joana Marinho ----- Tipo de Conta: POUPANCA ----- Saldo: R$0.0
+Nome: Mauricio Montes ----- Tipo de Conta: POUPANCA ----- Saldo: R$0.0
+Nome: Valentina Camanho ----- Tipo de Conta: POUPANCA ----- Saldo: R$0.0
+Nome: Morgana Caixão ----- Tipo de Conta: POUPANCA ----- Saldo: R$0.0
+Nome: Mariano Santomé ----- Tipo de Conta: CORRENTE ----- Saldo: R$0.0
+Nome: Valentino Mordes ----- Tipo de Conta: CORRENTE ----- Saldo: R$0.0
+Nome: Basilia Rodrigues ----- Tipo de Conta: CORRENTE ----- Saldo: R$0.0
+Nome: Fortunato lampião ----- Tipo de Conta: CORRENTE ----- Saldo: R$0.0
+Nome: Valéria Cardoso ----- Tipo de Conta: CORRENTE ----- Saldo: R$0.0
+------------------ Total de Capital Acumulado--------------- R$0.0

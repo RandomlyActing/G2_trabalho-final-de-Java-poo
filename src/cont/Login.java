@@ -8,11 +8,13 @@ import projeto.classes.ContaPoupanca;
 import projeto.classes.Diretor;
 import projeto.classes.Gerente;
 import projeto.classes.Presidente;
+import projeto.enums.CargosEnum;
+import projeto.exceptions.ContaException;
 
 
 public final class Login{
 
-		public final void login () throws FileNotFoundException {
+		public final void login () throws FileNotFoundException, ContaException {
 			Scanner in = new Scanner(System.in);
 			String opcao = "0";
 			String loginDigitado = "";
@@ -74,10 +76,35 @@ public final class Login{
 				}
 				
 				if (cliente != null && cliente.getCliente().getSenha().equals(senhaDigitada)) {
+					
+					if (gerente != null && gerente.getSenha().equals(senhaDigitada)) {
+						System.out.println("Gostaria de entrar em sua conta ou como gerente?"
+								+ "\n1:Entrar Como conta"
+								+ "\n2:Entrar como gerente");
+						int sn = in.nextInt();
+						if(sn == 2) {
+						MenuGerente menuGerente = new MenuGerente();
+						menuGerente.menuFuncionario(in, gerente);
+						}else {
+							System.out.println("Fale qual tipo de conta que gostaria de entrar "
+									+ "\n1: Conta Corrente"
+									+ "\n2: Conta Poupança");
+							int escolha = in.nextInt();
+							if (escolha == 1 && cliente.getTipo().equals("CORRENTE")) { 
+								
+							MenuCliente menuCliente = new MenuCliente();
+							menuCliente.menuCliente(in, cliente);
+							
+							}
+						}
+						
+					}else if (cliente.getCliente().getCargo().equals(CargosEnum.CLIENTE.name())) {
+					
 					System.out.println("Fale qual tipo de conta que gostaria de entrar "
 							+ "\n1: Conta Corrente"
 							+ "\n2: Conta Poupança");
 					int escolha = in.nextInt();
+					
 					if (escolha == 1 && cliente.getTipo().equals("CORRENTE")) { 
 						
 					MenuCliente menuCliente = new MenuCliente();
@@ -87,8 +114,8 @@ public final class Login{
 					if (escolha == 2 && clientepou.getTipo().equals("POUPANCA")) {
 						
 						MenuClientePou menuClientePou = new MenuClientePou();
-						menuClientePou.menuClientePou(in, cliente);
-						
+						menuClientePou.menuClientePou(in, clientepou);
+					}
 					}else {
 						
 						System.out.println("Escolheu nenhuma das contas, estarei removendo do sistema.");

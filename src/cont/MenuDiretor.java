@@ -1,13 +1,16 @@
 package cont;
 
+import java.util.List;
 import java.util.Scanner;
 
+import projeto.classes.Cliente;
 import projeto.classes.Diretor;
 
 public final class MenuDiretor {
 
 	public final void menuDiretor(Scanner in, Diretor diretor) {
 		
+		List<Cliente> cliente = Ler.cliente;
 		int menu;
 		int submenu;
 		int sair;
@@ -31,7 +34,9 @@ public final class MenuDiretor {
 					
 							switch (submenu) {
 									case 1: 
-										System.out.println("Relatorio com as informações");
+										System.out.println("*** Relatorio com as informações ***");
+										diretor.relatorioinformacoes(cliente);
+										
 										do{
 											System.out.println("\n *** Gostaria de fazer outra operação? ***\n");
 											System.out.println("1 - Retornar");

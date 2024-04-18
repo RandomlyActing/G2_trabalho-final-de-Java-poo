@@ -1,12 +1,18 @@
 package cont;
 
 import java.io.FileNotFoundException;
+import java.util.List;
 import java.util.Scanner;
+
+import projeto.classes.Conta;
 import projeto.classes.ContaCorrente;
+import projeto.exceptions.ContaException;
 
 public final class MenuCliente{
 
-	public final void menuCliente(Scanner in, ContaCorrente cliente) throws FileNotFoundException{
+	public final void menuCliente(Scanner in, ContaCorrente cliente) throws FileNotFoundException, ContaException{
+		
+		List<ContaCorrente> contaCor = Ler.contaCor;
 		
 		int menu = 0;
 		int submenu = 0;
@@ -36,7 +42,18 @@ public final class MenuCliente{
 							switch (submenu) 
 							{
 								case 1:
-									System.out.println("Saque");
+									System.out.println("Saque \n");
+									
+									cliente.mostrarSaldo();
+									System.out.println("\n*** Quanto gostaria de sacar? ***");
+									double saq = in.nextDouble();
+									
+									cliente.saque(saq);
+									cliente.mostrarSaldo();
+									
+									if (cliente.getSaldo() < 0) {
+										System.out.println("*** Aviso Sua Conta Esta No Negativo!!! ***");
+									}
 									
 									do {
 									System.out.println("\n*** Gostaria de sair ou fazer outra operação *** \n");
@@ -50,7 +67,15 @@ public final class MenuCliente{
 									break;
 									
 								case 2:
-									System.out.println("Depósito.");
+									System.out.println("Depósito.\n");
+									
+									cliente.mostrarSaldo();
+									System.out.println("\n*** Quanto gostaria de depósitar? ***\n");
+									double dep = in.nextDouble();
+									
+									
+									cliente.deposito(dep);
+									cliente.mostrarSaldo();
 									
 									do {
 										System.out.println("\n*** Gostaria de sair ou fazer outra operação *** \n");
@@ -64,7 +89,26 @@ public final class MenuCliente{
 										break;
 									
 								case 3:
-									System.out.println("Transferência para outra conta");
+									System.out.println("\n***Transferência para outra conta***\n");
+									
+									System.out.println("\n*** Quanto gostaria de Transferir para outra conta? ***\n");
+									double trans = in.nextDouble();
+									
+									System.out.println("\n*** Para quem deseja transferir? ***\n");
+									String cli = in.next();
+									
+									
+									Conta transf = null;
+									for (Conta c : contaCor) {
+										if (c.getCliente().getCpf().equals(cli)) {
+											transf = c;
+											break;
+										}
+									}
+									transf.getCliente().setCpf(cli);
+										
+									cliente.transferencia(transf , trans);
+									cliente.mostrarSaldo();
 									
 									do {
 										System.out.println("\n*** Gostaria de sair ou fazer outra operação *** \n");
@@ -94,7 +138,9 @@ public final class MenuCliente{
 					
 						switch (submenu) {
 							case 1:
-								System.out.println("*** Saldo ***");
+								
+								System.out.println("\n*** Saldo ***\n");
+								cliente.mostrarSaldo();
 								
 								do {
 									System.out.println("\n*** Gostaria de sair ou fazer outra operação *** \n");
@@ -108,7 +154,10 @@ public final class MenuCliente{
 									break;
 									
 							case 2:
-								System.out.println("*** Relatório de tributação da conta corrente ***");
+								
+								System.out.println("\n*** Relatório de tributação da conta corrente ***\n");
+								cliente.mostrarTotalTributacaov2();
+								
 								do {
 									
 									System.out.println("\n*** Gostaria de sair ou fazer outra operação *** \n");

@@ -1,0 +1,12 @@
+-----------------------Relatório de Informações dos Clientes-----------------
+Data: 18/04/2024------------------------------------
+Nome: Adalberto Fontes -------- CPF: 111111111-11
+Nome: Basilia Rodrigues -------- CPF: 234567891-11
+Nome: Fortunato lampião -------- CPF: 012345678-90
+Nome: Joana Marinho -------- CPF: 222222222-22
+Nome: Mariano Santomé -------- CPF: 555555555-55
+Nome: Mauricio Montes -------- CPF: 333333333-11
+Nome: Morgana Caixão -------- CPF: 777777777-77
+Nome: Valentina Camanho -------- CPF: 444444444-22
+Nome: Valentino Mordes -------- CPF: 123456789-10
+Nome: Valéria Cardoso -------- CPF: 888888888-88

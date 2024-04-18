@@ -1,8 +1,8 @@
 package projeto.classes;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 import projeto.entradasaida.EscreverRelatorioInformacoes;
 import projeto.enums.CargosEnum;
@@ -14,18 +14,18 @@ public class Diretor extends Funcionario {
 		this.cargo = CargosEnum.DIRETOR.name();
 	}
 	
-	public void relatorioinformacoes(ArrayList<Pessoa> listaPessoas)
+	public void relatorioinformacoes(List<Cliente> cliente)
 	{
 		
-		Collections.sort(listaPessoas, Comparator.comparing(Pessoa :: getNome));
-		for(Pessoa c : listaPessoas)
+		Collections.sort(cliente, Comparator.comparing(Pessoa :: getNome));
+		for(Pessoa c : cliente)
 		{
 			if(c.getCargo().equals("CLIENTE"))
 			{
 				System.out.println("Nome: " + c.getNome() + " --- CPF: " + c.getCpf() );
 			}
 		}
-		EscreverRelatorioInformacoes.relatorio(listaPessoas);
+		EscreverRelatorioInformacoes.relatorio(cliente);
 		
 	}
 

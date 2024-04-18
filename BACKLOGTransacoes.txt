@@ -1,0 +1,22 @@
+
+18/04/2024 - 14:20:47 ---- Adalberto Fontes ---- Transação: DEPOSITO ----  R$100.0
+18/04/2024 - 14:20:57 ---- Adalberto Fontes ---- Transação: SAQUE ----  R$10.0
+18/04/2024 - 14:22:39 ---- Adalberto Fontes ---- Transação: DEPOSITO ----  R$100.0
+18/04/2024 - 14:22:44 ---- Adalberto Fontes ---- Transação: SAQUE ----  R$50.0
+18/04/2024 - 14:24:47 ---- Adalberto Fontes ---- Transação: DEPOSITO ----  R$100.0
+18/04/2024 - 14:24:52 ---- Adalberto Fontes ---- Transação: SAQUE ----  R$50.0
+18/04/2024 - 14:48:58 ---- Adalberto Fontes ---- Transação: DEPOSITO ----  R$100.0
+18/04/2024 - 14:49:48 ---- Adalberto Fontes ---- Transação: DEPOSITO ----  R$100.0
+18/04/2024 - 14:51:20 ---- Adalberto Fontes ---- Transação: DEPOSITO ----  R$100.0
+18/04/2024 - 14:51:31 ---- Adalberto Fontes ---- Transação: TRANSFERENCIA Para: Joana Marinho (222222222-22) ----  R$20.0
+18/04/2024 - 14:54:54 ---- Adalberto Fontes ---- Transação: DEPOSITO ----  R$100.0
+18/04/2024 - 14:54:58 ---- Adalberto Fontes ---- Transação: SAQUE ----  R$20.0
+18/04/2024 - 14:55:12 ---- Adalberto Fontes ---- Transação: TRANSFERENCIA Para: Mauricio Montes (333333333-11) ----  R$30.0
+18/04/2024 - 15:02:14 ---- Adalberto Fontes ---- Transação: DEPOSITO ----  R$100.0
+18/04/2024 - 15:02:17 ---- Adalberto Fontes ---- Transação: SAQUE ----  R$50.0
+18/04/2024 - 15:03:08 ---- Morgana Caixão ---- Transação: DEPOSITO ----  R$19.0
+18/04/2024 - 15:03:13 ---- Morgana Caixão ---- Transação: SAQUE ----  R$5.0
+18/04/2024 - 15:09:04 ---- Valentina Camanho ---- Transação: DEPOSITO ----  R$100.0
+18/04/2024 - 15:09:07 ---- Valentina Camanho ---- Transação: SAQUE ----  R$40.0
+18/04/2024 - 15:10:06 ---- Valentina Camanho ---- Transação: DEPOSITO ----  R$100.0
+18/04/2024 - 15:10:08 ---- Valentina Camanho ---- Transação: SAQUE ----  R$10.0

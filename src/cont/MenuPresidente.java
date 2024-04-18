@@ -1,13 +1,16 @@
 package cont;
 
+import java.util.List;
 import java.util.Scanner;
 
+import projeto.classes.Conta;
 import projeto.classes.Presidente;
 
 public final class MenuPresidente {
 	
 	public final void menuPresidente(Scanner in, Presidente presidente) {
 		
+		List<Conta> contageral = Ler.contageral;
 		int menu;
 		int submenu;
 		int sair;
@@ -31,7 +34,10 @@ public final class MenuPresidente {
 					
 							switch (submenu) {
 									case 1: 
-										System.out.println("Relatorio com as informações");
+										System.out.println("\n***Relatorio com as informações***\n");
+										
+										presidente.totaldeCapital(contageral);
+										
 										do {
 											System.out.println("\n *** Gostaria de fazer outra operação? ***\n");
 											System.out.println("1 - Retornar");

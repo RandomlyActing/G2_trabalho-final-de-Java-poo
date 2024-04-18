@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import projeto.classes.Cliente;
+import projeto.classes.Conta;
 import projeto.classes.ContaCorrente;
 import projeto.classes.ContaPoupanca;
 import projeto.classes.Diretor;
@@ -20,6 +21,8 @@ public class Ler {
 	public static List<Diretor> diretores;
 	public static List<Presidente> presidentes;
 	public static List<ContaPoupanca> contaPou;
+	public static List<Cliente> cliente;
+	public static List<Conta> contageral;
 	
 	public static void leitor() throws FileNotFoundException{
 		
@@ -27,11 +30,14 @@ public class Ler {
 	    File pessoa = new File("pessoa.txt");
 	    File contas = new File("contas.txt");
 	    
+	    cliente = new ArrayList<Cliente>();
+	    contaPou = new ArrayList<ContaPoupanca>();
 	    contaCor = new ArrayList<ContaCorrente>();
 	    gerentes = new ArrayList<Gerente>();
 	    diretores = new ArrayList<Diretor>();
 	    presidentes = new ArrayList<Presidente>();
-	    contaPou = new ArrayList<ContaPoupanca>();
+	    contageral = new ArrayList<Conta>();
+	   
 	    
 	    @SuppressWarnings("resource")
 	    Scanner is = new Scanner(contas);
@@ -53,6 +59,8 @@ public class Ler {
 
 	            if (dados[0].equals("CLIENTE") ) {
 	   
+	            	Cliente client = new Cliente (dados[1], dados[2],dados[3]);
+	            	cliente.add(client);
 	            	
 	            	while(is.hasNext()) {
 	            		String cont = is.nextLine();
@@ -74,6 +82,7 @@ public class Ler {
 	            		contaCorrente.getGerente().setAgencia(conta[4]);
 	            		
 			            contaCor.add(contaCorrente);
+			            contageral.add(contaCorrente);
 	            		}
 		            	
 	            	if (conta[0].equals("POUPANCA")) {
@@ -91,6 +100,7 @@ public class Ler {
 	            		contaPoupaca.getGerente().setAgencia(conta[4]);
 	            		
 			            contaPou.add(contaPoupaca);
+			            contageral.add(contaPoupaca);
 	            		}
 	            	}
 	            }

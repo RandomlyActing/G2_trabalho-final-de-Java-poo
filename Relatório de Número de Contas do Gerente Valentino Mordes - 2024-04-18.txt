@@ -1,0 +1,5 @@
+------------------ Relação de Contas--------------------------
+Gerente ------- Valentino Mordes -----------Data: 18/04/2024
+Tipo de Conta: CORRENTE -------- Nome: Joana Marinho
+Tipo de Conta: CORRENTE -------- Nome: Valentino Mordes
+Número de contas gerenciadas por Valentino Mordes: 2
