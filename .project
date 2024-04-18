@@ -14,4 +14,16 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/cont/contas.txt</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/contas.txt</locationURI>
+		</link>
+		<link>
+			<name>src/cont/pessoa.txt</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/pessoa.txt</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

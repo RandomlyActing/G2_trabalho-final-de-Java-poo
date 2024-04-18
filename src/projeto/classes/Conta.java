@@ -9,7 +9,6 @@ public abstract class Conta implements Transacao {
 	protected String agencia;
 	protected Gerente gerente;
 	protected String tipo;
-	protected double gastos;
 	
 	public Conta(Cliente cliente, String agencia, Gerente gerente) {
 		this.cliente = cliente;
@@ -37,16 +36,6 @@ public abstract class Conta implements Transacao {
 		return tipo;
 	}
 	
-	
-	
-	public double getGastos() {
-		return gastos;
-	}
-
-	public void setGastos(double gastos) {
-		this.gastos = gastos;
-	}
-
 	public void adicionarSaldo (double valor)
 	{
 		this.saldo = this.saldo + valor; 

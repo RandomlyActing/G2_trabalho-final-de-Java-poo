@@ -3,7 +3,8 @@ package cont;
 import java.io.FileNotFoundException;
 import java.util.List;
 import java.util.Scanner;
-import projeto.classes.Cliente;
+import projeto.classes.ContaCorrente;
+import projeto.classes.ContaPoupanca;
 import projeto.classes.Diretor;
 import projeto.classes.Gerente;
 import projeto.classes.Presidente;
@@ -17,7 +18,8 @@ public final class Login{
 			String loginDigitado = "";
 			String senhaDigitada = "";
 			
-			List<Cliente> clientes = Ler.clientes;
+			List<ContaCorrente> contaCor = Ler.contaCor;
+			List<ContaPoupanca> contaPou = Ler.contaPou;
 			List<Gerente> gerentes = Ler.gerentes;
 			List<Presidente> presidentes = Ler.presidentes;
 			List<Diretor> diretores = Ler.diretores;
@@ -31,10 +33,18 @@ public final class Login{
 				senhaDigitada = in.nextLine();
 				
 				
-				Cliente cliente = null;
-				for (Cliente c : clientes) {
-					if (c.getCpf().equals(loginDigitado)) {
+				ContaCorrente cliente = null;
+				for (ContaCorrente c : contaCor) {
+					if (c.getCliente().getCpf().equals(loginDigitado)) {
 						cliente = c;
+						break;
+					}
+				}
+				
+				ContaPoupanca clientepou = null;
+				for (ContaPoupanca c : contaPou) {
+					if (c.getCliente().getCpf().equals(loginDigitado)) {
+						clientepou = c;
 						break;
 					}
 				}
@@ -63,9 +73,27 @@ public final class Login{
 					}
 				}
 				
-				if (cliente != null && cliente.getSenha().equals(senhaDigitada)) {
+				if (cliente != null && cliente.getCliente().getSenha().equals(senhaDigitada)) {
+					System.out.println("Fale qual tipo de conta que gostaria de entrar "
+							+ "\n1: Conta Corrente"
+							+ "\n2: Conta Poupança");
+					int escolha = in.nextInt();
+					if (escolha == 1 && cliente.getTipo().equals("CORRENTE")) { 
+						
 					MenuCliente menuCliente = new MenuCliente();
 					menuCliente.menuCliente(in, cliente);
+					}
+					
+					if (escolha == 2 && clientepou.getTipo().equals("POUPANCA")) {
+						
+						MenuClientePou menuClientePou = new MenuClientePou();
+						menuClientePou.menuClientePou(in, cliente);
+						
+					}else {
+						
+						System.out.println("Escolheu nenhuma das contas, estarei removendo do sistema.");
+						System.exit(0);
+					}
 					
 				}else if (gerente != null && gerente.getSenha().equals(senhaDigitada)) {
 					MenuGerente menuGerente = new MenuGerente();

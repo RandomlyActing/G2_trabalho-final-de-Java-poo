@@ -4,9 +4,9 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import projeto.classes.ContaCorrente;
 
-public final class MenuCliente{
+public final class MenuClientePou{
 
-	public final void menuCliente(Scanner in, ContaCorrente cliente) throws FileNotFoundException{
+	public final void menuClientePou(Scanner in, ContaCorrente cliente) throws FileNotFoundException{
 		
 		int menu = 0;
 		int submenu = 0;
@@ -88,8 +88,9 @@ public final class MenuCliente{
 						System.out.println("*** Relatórios ***");
 						System.out.println("1 - Saldo.");
 						System.out.println("2 - Relatório de tributação da conta corrente.");
-						System.out.println("3 - Retornar.");
-						System.out.println("4 - Sair.");
+						System.out.println("3 - Relatório de Rendimento da poupança.");
+						System.out.println("4 - Retornar.");
+						System.out.println("5 - Sair.");
 						submenu = in.nextInt();
 					
 						switch (submenu) {
@@ -120,10 +121,23 @@ public final class MenuCliente{
 									
 									}while (sair != 1);
 									break;
+							case 3:
+								System.out.println("*** Relatório de Rendimento da poupança ***");
+								
+								do {
+									System.out.println("\n*** Gostaria de sair ou fazer outra operação *** \n");
+									System.out.println("1 - Retornar");
+									System.out.println("2 - Sair");
+									sair = in.nextInt();
+									if(sair == 2) { System.out.println("Volte sempre"); System.exit(0); }
+									
+									
+									}while (sair != 1);
+									break;
 							}
 						
-						if (submenu == 4) { System.out.println("Volte sempre"); System.exit(0); }
-					}while (submenu != 3);
+						if (submenu == 5) { System.out.println("Volte sempre"); System.exit(0); }
+					}while (submenu != 4);
 					break;
 					
 			}

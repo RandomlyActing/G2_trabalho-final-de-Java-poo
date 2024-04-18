@@ -1,0 +1,18 @@
+package projeto.classes;
+
+import java.io.FileNotFoundException;
+
+import cont.Ler;
+import cont.Login;
+
+public class Principal {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		
+		Ler.leitor();
+        Login menu = new Login();
+        menu.login();
+
+	}
+
+}
