@@ -5,3 +5,5 @@ Participantes:
 * Guido Giuseppe Scagliusi
 * Mateus Pereira Daltro
 * Ian Gonçalves Paes Siqueira
+
+* Todo o projeto foi feito usando o JDK 22.
